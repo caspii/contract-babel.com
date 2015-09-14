@@ -1,4 +1,6 @@
 # TODO
+1. Add GA
+2. Fix fonts: should be serif
 1. i18n
 
 # [Start Bootstrap](http://startbootstrap.com/) - [Creative](http://startbootstrap.com/template-overviews/creative/)
