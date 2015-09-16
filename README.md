@@ -1,7 +1,7 @@
 # TODO
 1. Add GA
-2. Fix fonts: should be serif
 1. i18n
+2. Favicon
 
 # [Start Bootstrap](http://startbootstrap.com/) - [Creative](http://startbootstrap.com/template-overviews/creative/)
 
