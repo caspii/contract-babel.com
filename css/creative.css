@@ -482,3 +482,11 @@ li {
 .fa-4x {
     padding-bottom: 15px;
 }
+
+#imprint {
+    padding: 0;
+}
+
+.imprinttext {
+    font-size: smaller;
+}
