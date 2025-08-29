@@ -24,6 +24,253 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Modern blue */
+            --primary-dark: #1e40af;
+            --primary-light: #60a5fa;
+            --accent-color: #10b981; /* Modern green */
+            --accent-glow: #34d399;
+            --dark-bg: #0f172a; /* Modern dark */
+            --gray-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+        
+        /* Override Bootstrap colors */
+        .bg-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+        }
+        
+        .bg-dark {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%) !important;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border: none;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+        }
+        
+        .btn-default {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+        }
+        
+        .btn-default:hover {
+            background: rgba(255,255,255,0.9);
+            color: var(--primary-dark);
+        }
+        
+        a {
+            color: var(--primary-color);
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        /* Navbar always white background */
+        .navbar-default {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        /* Brand always blue */
+        .navbar-default .navbar-header .navbar-brand,
+        .navbar-default.affix .navbar-header .navbar-brand,
+        .navbar-header .navbar-brand,
+        .affix .navbar-header .navbar-brand,
+        #mainNav .navbar-brand,
+        #mainNav.affix .navbar-brand {
+            color: var(--primary-color) !important;
+            font-weight: 700;
+        }
+        
+        .navbar-default .navbar-header .navbar-brand:hover,
+        .navbar-default .navbar-header .navbar-brand:focus,
+        .navbar-default.affix .navbar-header .navbar-brand:hover,
+        .navbar-default.affix .navbar-header .navbar-brand:focus,
+        #mainNav .navbar-brand:hover,
+        #mainNav .navbar-brand:focus,
+        #mainNav.affix .navbar-brand:hover,
+        #mainNav.affix .navbar-brand:focus {
+            color: var(--primary-dark) !important;
+        }
+        
+        /* Nav links always dark for readability */
+        .navbar-default .nav > li > a,
+        .navbar-default.affix .nav > li > a,
+        .affix .nav > li > a,
+        #mainNav .nav > li > a,
+        #mainNav.affix .nav > li > a {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+        }
+        
+        .navbar-default .nav > li > a:hover,
+        .navbar-default .nav > li > a:focus,
+        .navbar-default.affix .nav > li > a:hover,
+        .navbar-default.affix .nav > li > a:focus,
+        .affix .nav > li > a:hover,
+        .affix .nav > li > a:focus,
+        #mainNav .nav > li > a:hover,
+        #mainNav .nav > li > a:focus,
+        #mainNav.affix .nav > li > a:hover,
+        #mainNav.affix .nav > li > a:focus {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Keep navbar white when scrolled */
+        .navbar-default.affix,
+        #mainNav.affix {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border-color: rgba(255, 255, 255, 0.95) !important;
+        }
+        
+        hr {
+            border-color: var(--primary-color);
+        }
+        
+        hr.primary {
+            border-color: var(--primary-color);
+        }
+        
+        hr.light {
+            border-color: #fff;
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        header {
+            position: relative;
+            width: 100%;
+            min-height: auto;
+            text-align: center;
+            color: #fff;
+            background-image: url(img/header.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 50%, rgba(240, 147, 251, 0.8) 100%);
+            z-index: 0;
+        }
+        
+        header .header-content {
+            position: relative;
+            width: 100%;
+            padding: 100px 15px;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        @media(min-width:768px) {
+            header {
+                min-height: 100%;
+            }
+            
+            header .header-content {
+                position: absolute;
+                top: 50%;
+                padding: 0 50px;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+            
+            header .header-content .header-content-inner {
+                margin-right: auto;
+                margin-left: auto;
+                max-width: 1000px;
+            }
+        }
+        
+        .navbar-default {
+            z-index: 1000;
+        }
+        
+        @keyframes subtlePulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.005);
+                opacity: 0.95;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .promo-banner {
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.12);
+            animation: fadeIn 0.6s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .promo-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 35px rgba(16, 185, 129, 0.18);
+        }
+        
+        .promo-badge {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-glow));
+            animation: subtlePulse 4s infinite;
+        }
+        
+        .service-box i {
+            color: var(--primary-color);
+        }
+        
+        .navbar-default .navbar-toggle {
+            border-color: var(--primary-color);
+        }
+        
+        .navbar-default .navbar-toggle:hover,
+        .navbar-default .navbar-toggle:focus {
+            background-color: var(--primary-light);
+        }
+        
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: var(--primary-color);
+        }
+        
+        .navbar-default .navbar-collapse {
+            border-color: rgba(37, 99, 235, 0.1);
+        }
+    </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -83,6 +330,12 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
+                <div class="promo-banner" style="padding: 25px; border-radius: 20px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden;">
+                    <div class="promo-badge" style="position: absolute; top: -2px; right: 20px; color: white; padding: 5px 15px; border-radius: 0 0 10px 10px; font-weight: bold; font-size: 0.9em;">LIMITED</div>
+                    <h2 style="color: #10b981; margin: 0; font-weight: 800; font-size: 2.5em; background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">✨ SPECIAL OFFER: 99 for 99</h2>
+                    <p style="color: #1e293b; margin: 10px 0 0 0; font-size: 1.3em; font-weight: 600;">⏰ 99 minutes of legal advice for only 99 EUR!</p>
+                    <a href="#offer99" class="btn btn-xl page-scroll" style="margin-top: 15px; background: linear-gradient(135deg, #10b981, #34d399); color: white; border: none; font-size: 1.1em; padding: 18px 35px; font-weight: bold; border-radius: 50px; transition: all 0.3s;">Get Started →</a>
+                </div>
                 <h1>English language contract reviewing service</h1>
                 <hr>
                 <h2>We are aimed at businesses who are dealing with international
@@ -318,7 +571,7 @@
                 <div class="col-lg-12 text-left text-faded">
                     <blockquote>
                         <p>The Spark has not had much experience with legal matters and Contract babel made everything reassuring simple and straightforward; explaining wording and principles clearly and patiently.   Contract babel created our precedent NDA and consultancy agreement for subcontractors. Contract babel in preparing these contracts addressed our concerns completely, delivered on time and within budget.</p>
-                        <footer>Margaret Piatkowski - Director The Spark Consultancy</footer>
+                        <footer style="font-size: 1.3em; font-weight: 600; margin-top: 20px;">Margaret Piatkowski - Director The Spark Consultancy</footer>
                     </blockquote>
                 </div>
             </div>
@@ -326,7 +579,7 @@
                 <div class="col-lg-12 text-left text-faded">
                     <blockquote class="blockquote-reverse">
                         <p>BlubBox utilised Contract babel's services at the early stages of a dispute with another Singaporean company. Contract babel evaluated the merits of BlueBox's claim and advised effectively on next course of action ensuing a successful outcome for us.</p>
-                        <footer>Roshni Pandey - Director BlueBox Group</footer>
+                        <footer style="font-size: 1.3em; font-weight: 600; margin-top: 20px;">Roshni Pandey - Director BlueBox Group</footer>
                     </blockquote>
                 </div>
             </div>
@@ -334,7 +587,7 @@
                 <div class="col-lg-12 text-left text-faded">
                     <blockquote>
                         <p>Propellerfish hired Contract babel to negotiate a services contract with a American Fortune 500 payments company. Contract babel reviewed, amended and negotiated the contract on our behalf to a successful conclusion, while ensuring our interests were fully protected.</p>
-                        <footer>Alex Marquez - Founder Propellerfish</footer>
+                        <footer style="font-size: 1.3em; font-weight: 600; margin-top: 20px;">Alex Marquez - Founder Propellerfish</footer>
                     </blockquote>
                 </div>
             </div>
@@ -344,12 +597,12 @@
     <section id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-left">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Please get in touch</h2>
                     <hr class="primary">
                     <p>We'd be very happy to help you</p>
                 </div>
-                <div class="col-lg-8 col-lg-offset-2 text-left">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
                     <p><a href="mailto:info@contract-babel.com">info@contract-babel.com</a></p>
                 </div>
