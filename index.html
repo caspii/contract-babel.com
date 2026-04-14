@@ -228,24 +228,6 @@
             }
         }
         
-        .promo-banner {
-            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
-            border: 2px solid var(--accent-color);
-            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.12);
-            animation: fadeIn 0.6s ease-out;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .promo-banner:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 35px rgba(16, 185, 129, 0.18);
-        }
-        
-        .promo-badge {
-            background: linear-gradient(135deg, var(--accent-color), var(--accent-glow));
-            animation: subtlePulse 4s infinite;
-        }
-        
         .service-box i {
             color: var(--primary-color);
         }
@@ -387,17 +369,15 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <div class="promo-banner" style="padding: 25px; border-radius: 20px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden;">
-                    <div class="promo-badge" style="position: absolute; top: -2px; right: 20px; color: white; padding: 5px 15px; border-radius: 0 0 10px 10px; font-weight: bold; font-size: 0.9em;">LIMITIERT</div>
-                    <h2 style="color: #10b981; margin: 0; font-weight: 800; font-size: 2.5em; background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">✨ SONDERANGEBOT: 99 für 99</h2>
-                    <p style="color: #1e293b; margin: 10px 0 0 0; font-size: 1.3em; font-weight: 600;">⏰ 99 Minuten Rechtsberatung für nur 99 EUR!</p>
-                    <a href="#offer99" class="btn btn-xl page-scroll" style="margin-top: 15px; background: linear-gradient(135deg, #10b981, #34d399); color: white; border: none; font-size: 1.1em; padding: 18px 35px; font-weight: bold; border-radius: 50px; transition: all 0.3s;">Jetzt sichern →</a>
-                </div>
                 <h1>Anwalt für Vertragsrecht in Berlin — Vertragsprüfung englischer Verträge</h1>
                 <hr>
                 <h2>Wir richten uns an Alle, die Unterstützung beim Überprüfen und Aushandeln
                     englischsprachiger Verträge benötigen.</h2>
-
+                <p style="margin: 20px auto 30px; text-align: center;">
+                    <a href="#offer99" class="page-scroll" style="display: inline-block; background: rgba(16,185,129,0.25); color: #d1fae5; border: 1px solid rgba(16,185,129,0.7); border-radius: 999px; padding: 8px 20px; font-size: 0.95em; font-weight: 600; text-decoration: none; transition: background 0.2s;">
+                        ✨ Sonderangebot: 99 Minuten Rechtsberatung für nur 99 EUR →
+                    </a>
+                </p>
                 <a href="#why" class="btn btn-primary btn-xl page-scroll">Mehr erfahren</a>
             </div>
         </div>
